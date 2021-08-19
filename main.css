@@ -1,5 +1,7 @@
 p {
-	background: orange;
 	font-size: 24px;
-	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	color: #888;
 }
