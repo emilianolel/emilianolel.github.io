@@ -25,4 +25,46 @@ body {
     font-size: 2rem;
 }
 
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--durazno);
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: 700;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--durazno);
+    color: var(--oscuro);
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg {
+    background-color: var(--guinda);
+}
+
+.imagen-fondo {
+    background-image: url(../img/arboles.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+}
 
