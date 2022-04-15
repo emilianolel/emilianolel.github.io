@@ -5,11 +5,13 @@
     --morado: #2E2137;
     --oscuro: #111115;
     --blanco: #FFFFFF;
+    --grisClaro: #DFE9F3;
 }
 
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-snap-type: y mandatory;
 }
 
 *, *:before, *:after {
@@ -19,6 +21,14 @@ html {
 body {
     font-size: 16px; /*1rem = 10px*/
     font-family: Agave, Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%)
+}
+
+.sombra {
+    box-shadow: -7px 10px 0px -3px rgba(122,110,122,1);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 h1 {
@@ -45,6 +55,26 @@ h1, h2, h3 {
     font-size: 2rem;
 }
 
+/** Utilidades **/
+.w-sm-100 {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+@media (min-width: 780px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+/** Navegación Principal **/
 .navegacion-principal {
     display: flex;
     flex-direction: column;
@@ -89,12 +119,17 @@ h1, h2, h3 {
     border-radius: .5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
 
 @media (min-width: 768px) {
     .boton {
         width: auto;
     }
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .nav-bg {
@@ -107,6 +142,7 @@ h1, h2, h3 {
     background-size: cover;
     height: 450px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .contenido-imagen-fondo {
@@ -132,5 +168,112 @@ h1, h2, h3 {
     align-items: flex-end;
 }
 
+/** Servicios **/
 
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+}
 
+/** Scroll Snap **/
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.servicio h3 {
+    color: var(--guinda);
+
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--durazno);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    background-color: var(--grisClaro);
+    width: min(60rem, 100%); /** Utilizar el valor más pequeño **/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    color: var(--guinda);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       grid-template-rows: auto auto 20rem;
+       column-gap: 2rem;
+    }
+    
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+
+}
+
+.campo textarea {
+    height: 18rem;
+}
+
+.campo label {
+    color: var(--morado);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+} 
+
+/** Footer **/
+
+.footer {
+    text-align: center;
+}
