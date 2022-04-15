@@ -178,13 +178,14 @@ h1, h2, h3 {
     }
 }
 
-/** Scroll Snap **/
+/** Scroll Snap 
 .servicios,
 .navegacion-principal,
 .formulario {
     scroll-snap-align: center;
     scroll-snap-stop: always;
 }
+**/
 
 .servicio {
     display: flex;
